@@ -15,6 +15,14 @@ def encrypt(key,plaintext):
 def decrypt(key,ciphertext):
     plaintext=""
     
+     for i in plaintext:
+      if i.isalpha():
+        alphabet = ord(i)-key
+        if alphabet < ord("Z"):
+          alphabet += 26
+        letter = chr(alphabet)
+        ciphertext+=letter
+    
     return plaintext
 
 
